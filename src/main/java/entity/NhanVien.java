@@ -15,7 +15,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = {"taiKhoan", "hoaDons"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
 public class NhanVien {
@@ -33,6 +33,9 @@ public class NhanVien {
 	boolean trangThai;
 	int chucVu;
 	String avtString;
+
+	@OneToOne(mappedBy = "NV", cascade = CascadeType.ALL)
+	TaiKhoan taiKhoan;
 
 	@OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
 	List<HoaDon> hoaDons;
@@ -61,10 +64,10 @@ public class NhanVien {
 		this.avtString = avtString;
 	}
 }
-	
-	
-	
 
-    
-    
+
+
+
+
+
 

@@ -69,15 +69,6 @@ public class Menu_UI extends JPanel implements ActionListener, MouseInputListene
 				new MatteBorder(0, 0, 1, 0, Color.decode("#f2f2f2"))));
 		pnlMenu.add(mnTrangChu);
 
-//		mnBanHang = new JMenuItem("  BÁN HÀNG");
-//		mnBanHang.setFont(new Font("Segoe UI Semibold", Font.BOLD, 21));
-//		mnBanHang.setIcon(new ImageScaler("/icon/icon_banhang.png", 25, 25).getScaledImageIcon());
-//		mnBanHang.setBackground(Color.decode("#B16E5C"));
-//		mnBanHang.setForeground(Color.decode("#ffffff"));
-//		mnBanHang.setBorder(new CompoundBorder(new EmptyBorder(0, 10, 0, 10),
-//				new MatteBorder(0, 0, 1, 0, Color.decode("#f2f2f2"))));
-//		pnlMenu.add(mnBanHang);
-		
 		mnSanPham = new JMenuItem("  SẢN PHẨM");
 		mnSanPham.setFont(new Font("Segoe UI Semibold", Font.BOLD, 21));
 		mnSanPham.setIcon(new ImageScaler("/icon/icon_sanpham.png", 25, 25).getScaledImageIcon());
@@ -96,8 +87,6 @@ public class Menu_UI extends JPanel implements ActionListener, MouseInputListene
 		mnHoaDon.setBorder(new CompoundBorder(new EmptyBorder(0, 10, 0, 10),
 				new MatteBorder(0, 0, 1, 0, Color.decode("#f2f2f2"))));
 		pnlMenu.add(mnHoaDon);
-
-		
 
 		mnThongKe = new JMenuItem("  THỐNG KÊ");
 		mnThongKe.setFont(new Font("Segoe UI Semibold", Font.BOLD, 21));
@@ -131,51 +120,41 @@ public class Menu_UI extends JPanel implements ActionListener, MouseInputListene
 			mnNhanVien.setEnabled(false);
 			mnNhanVien.setBackground(Color.decode("#8c7069"));
 		}
-		
-		
-
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -195,25 +174,11 @@ public class Menu_UI extends JPanel implements ActionListener, MouseInputListene
 			
 		}
 
-		// click hien giao dien Ban Hang
-//		if (o == mnBanHang) {
-//			resetPage(new BanHang_UI());
-//			
-//			mnTrangChu.setBackground(Color.decode("#B16E5C"));
-//			mnBanHang.setBackground(Color.decode("#7f483a"));
-//			mnHoaDon.setBackground(Color.decode("#B16E5C"));
-//			mnSanPham.setBackground(Color.decode("#B16E5C"));
-//			mnThongKe.setBackground(Color.decode("#B16E5C"));
-//			mnNhanVien.setBackground(Color.decode("#B16E5C"));
-//			
-//		}
-
 		// click hien giao dien Hoa don
 		if (o == mnHoaDon) {
 			resetPage(new HoaDon_UI());
 			
 			mnTrangChu.setBackground(Color.decode("#B16E5C"));
-//			mnBanHang.setBackground(Color.decode("#B16E5C"));
 			mnHoaDon.setBackground(Color.decode("#7f483a"));
 			mnSanPham.setBackground(Color.decode("#B16E5C"));
 			mnThongKe.setBackground(Color.decode("#B16E5C"));
@@ -225,32 +190,28 @@ public class Menu_UI extends JPanel implements ActionListener, MouseInputListene
 			resetPage(new SanPham_UI(main));
 			
 			mnTrangChu.setBackground(Color.decode("#B16E5C"));
-//			mnBanHang.setBackground(Color.decode("#B16E5C"));
 			mnHoaDon.setBackground(Color.decode("#B16E5C"));
 			mnSanPham.setBackground(Color.decode("#7f483a"));
 			mnThongKe.setBackground(Color.decode("#B16E5C"));
 			mnNhanVien.setBackground(Color.decode("#B16E5C"));
-			
-			
-			
 		}
+
 		// click hien giao dien thong ke
 		if (o == mnThongKe) {
 			resetPage(new ThongKe_UI());
 			
 			mnTrangChu.setBackground(Color.decode("#B16E5C"));
-//			mnBanHang.setBackground(Color.decode("#B16E5C"));
 			mnHoaDon.setBackground(Color.decode("#B16E5C"));
 			mnSanPham.setBackground(Color.decode("#B16E5C"));
 			mnThongKe.setBackground(Color.decode("#7f483a"));
 			mnNhanVien.setBackground(Color.decode("#B16E5C"));
 		}
+
 		// click hien giao dien nhan vien
 		if (o == mnNhanVien) {
 			resetPage(new NhanVien_UI());
 			
 			mnTrangChu.setBackground(Color.decode("#B16E5C"));
-//			mnBanHang.setBackground(Color.decode("#B16E5C"));
 			mnHoaDon.setBackground(Color.decode("#B16E5C"));
 			mnSanPham.setBackground(Color.decode("#B16E5C"));
 			mnThongKe.setBackground(Color.decode("#B16E5C"));

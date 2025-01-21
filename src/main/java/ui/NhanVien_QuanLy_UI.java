@@ -197,11 +197,9 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		JLabel lblNgaySinh = new JLabel("Ngày sinh");
 		panel_17.add(lblNgaySinh, BorderLayout.WEST);
 		
-		
 		ngaySinh = new JXDatePicker();
 		panel_17.add(ngaySinh, BorderLayout.CENTER);
-		
-		
+
 		JPanel panel_7 = new JPanel();
 		panel.add(panel_7);
 		panel_7.setLayout(new BorderLayout(0, 0));
@@ -323,8 +321,6 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		comboBoxTrangThai.addItem("Đang làm");
 		comboBoxTrangThai.addItem("Đã nghỉ");
 		
-		
-		
 		JPanel panel_27 = new JPanel();
 		panel_1.add(panel_27);
 		panel_27.setLayout(new BorderLayout(0, 0));
@@ -361,7 +357,6 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		btnXoa.setBackground(new Color(255, 0, 0));
 		btnXoa.setFont(new Font("Roboto", Font.BOLD, 20));
 		btnXoa.setForeground(Color.WHITE);
-		
 		
 		JPanel panel_25 = new JPanel();
 		panelOption.add(panel_25);
@@ -404,8 +399,6 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		comboBoxTrangThai.setEditable(false);
 		comboBoxChucVu.setEditable(false);
 
-		
-
 		btnSetAvt.addActionListener(this);
 		btnHuy.addActionListener(this);
 		btnLuu.addActionListener(this);
@@ -413,7 +406,6 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		btnThem.addActionListener(this);
 		btnXoa.addActionListener(this);
 		btnSetAvt.addActionListener(this);
-		
 		
 		btnLuu.setEnabled(false);
 		btnHuy.setEnabled(false);
@@ -512,10 +504,7 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 		}
 		
 	}
-	
 
-	
-	
 	private void suaAction() {
 		// TODO Auto-generated method stub
 		if(isValidInput() == true) {
@@ -752,7 +741,7 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 	
 	public boolean isValidInput() {
 		String regexMa = "^NV+[0-9]{4}$";
-		String regexHoTen = "^[A-Za-z]+( [A-Za-z]+)*$";
+//		String regexHoTen = "^[A-Za-z]+( [A-Za-z]+)*$";
 		String regexmatKhau = "^[a-zA-Z0-9]{9,15}$";
 		java.util.Date ngayHnay = new java.util.Date();
 		String regexSdt = "^0[0-9]{9}$";
@@ -767,30 +756,37 @@ public class NhanVien_QuanLy_UI extends JPanel implements ActionListener,  Mouse
 			JOptionPane.showMessageDialog(null, "Lỗi mã nhân viên.", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
-		if(!txtHoTen.getText().matches(regexHoTen)) {
+
+		if(txtHoTen.getText().length() < 2) {
 			JOptionPane.showMessageDialog(null, "Lỗi họ tên", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(!pwdMatKhau.getText().matches(regexmatKhau)) {
 			JOptionPane.showMessageDialog(null, "Lỗi mật khẩu", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(ngaySinh.getDate().after(allowAge)) {
 			JOptionPane.showMessageDialog(null, "Lỗi ngày sinh. Phai hon 18 tuoi", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(!txtSdt.getText().matches(regexSdt)) {
 			JOptionPane.showMessageDialog(null, "Lỗi số điện thoại.", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(!txtEmail.getText().matches(regexEmail)) {
 			JOptionPane.showMessageDialog(null, "Lỗi email", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(!txtCCCD.getText().matches(regexCCCD)) {
 			JOptionPane.showMessageDialog(null, "Lỗi căn cước công dân", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
+
 		if(ngayVaoLam.getDate().after(ngayHnay)) {
 			JOptionPane.showMessageDialog(null, "Lỗi ngày vào làm", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
