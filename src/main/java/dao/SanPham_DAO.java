@@ -53,20 +53,6 @@ public class SanPham_DAO {
 		return null;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// lay ma SP tụ dong
 	public String getMaSPTuDong() {
 		ConnectDB.getInstance();
@@ -99,6 +85,7 @@ public class SanPham_DAO {
 
 	// them san pham
 	public boolean themSanPham(SanPham sp) {
+		System.out.println(">>>"+sp);
 		ConnectDB.getInstance();
 		PreparedStatement st = null;
 		int n = 0;

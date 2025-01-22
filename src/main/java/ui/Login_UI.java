@@ -164,7 +164,7 @@ public class Login_UI extends JFrame implements ActionListener {
 	public boolean checkDN() {
 		String maNV = txtMaNv.getText();
 		String mk = txtMatKhau.getText();
-
+		System.out.println("MA NHAN VIEN DAY NEK :" + maNV + "\nMAT KHAU DAY NEK " + mk);
 		TK = new Login_DAO().kiemTraDangNhap(maNV, mk);
 
 		if (maNV.matches("^NV+[0-9]{4}$")) {

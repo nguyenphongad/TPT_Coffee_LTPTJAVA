@@ -9,7 +9,6 @@ import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
-import connectDB.ConnectDB;
 import entity.ChiTietHoaDon;
 import entity.HoaDon;
 import entity.SanPham;
@@ -44,7 +43,6 @@ public class ChiTietHoaDon_DAO {
 		List<ChiTietHoaDon> dsChiTietHoaDon = new ArrayList<ChiTietHoaDon>();
 		
 		try {
-			connection = ConnectDB.getConnection();
 			preparedStatement = connection.prepareStatement("Select * From ChiTietHoaDon Where maHD = ?");
 			preparedStatement.setString(1, maHoaDon);
 			resultSet = preparedStatement.executeQuery();
@@ -70,7 +68,6 @@ public class ChiTietHoaDon_DAO {
 		modelSP = new DefaultTableModel(cols, 0);
 		DecimalFormat decimalFormat = new DecimalFormat("#,###.#VND");
 		try {
-			connection = ConnectDB.getConnection();
 			preparedStatement = connection.prepareStatement(
 				"SELECT cthd.maSP, sp.tenSP, sp.loaiSP, sp.donGia, COUNT(soLuong) as soLuongDaBan, SUM(sp.donGia) as tongDoanhThu " +
 				"FROM ChiTietHoaDon cthd JOIN [dbo].[SanPham] sp on cthd.maSP = sp.maSP " +

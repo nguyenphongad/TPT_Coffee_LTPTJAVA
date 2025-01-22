@@ -52,7 +52,7 @@ public class Login_DAO {
 	
 	public TaiKhoan kiemTraDangNhap(String maNV, String matKhau) {
 		    TaiKhoan taiKhoan = null;
-
+			System.out.println("123 MA NHAN VIEN DAY NEK :" + maNV + "\n 123MAT KHAU DAY NEK " + matKhau);
 		    try {
 				em.getTransaction().begin();
 

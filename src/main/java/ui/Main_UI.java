@@ -1,12 +1,12 @@
 package ui;
 
 import java.awt.BorderLayout;
+import java.sql.Date;
 import java.sql.SQLException;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
+import entity.NhanVien;
 import entity.TaiKhoan;
 import util.ImportFont;
 
@@ -45,7 +45,6 @@ public class Main_UI extends JFrame {
 
 		pnlContent.add(new SanPham_UI(this), BorderLayout.CENTER);
 	}
-	
 
 	// khoi tao mac dinh khi chay ung dung
 	public void startDefault() {
