@@ -28,12 +28,12 @@ import javax.swing.JTextField;
 public class Login_UI extends JFrame implements ActionListener {
 
 	ImageIcon appIcon = new ImageIcon("res/image/icon_logo.PNG");
-	private JButton btnClosePage;
-	private JTextField txtMaNv;
-	private JPasswordField txtMatKhau;
-	private RoundedButton btnLogin;
+	private final JButton btnClosePage;
+	private final JTextField txtMaNv;
+	private final JPasswordField txtMatKhau;
+	private final RoundedButton btnLogin;
 
-	private ArrayList<TaiKhoan> dstk = new ArrayList<>();
+	private final ArrayList<TaiKhoan> dstk = new ArrayList<>();
 	private TaiKhoan TK;
 
 	public Login_UI() {
@@ -127,7 +127,7 @@ public class Login_UI extends JFrame implements ActionListener {
 		btnClosePage.setBackground(Color.decode("#B16E5C"));
 		btnClosePage.setForeground(Color.decode("#ffffff"));
 		btnClosePage.setFont(new Font("Tahoma", Font.BOLD, 36));
-		btnClosePage.setBorder(new MatteBorder(0, 0, 0, 0, (Color) new Color(255, 255, 255)));
+		btnClosePage.setBorder(new MatteBorder(0, 0, 0, 0, new Color(255, 255, 255)));
 		btnClosePage.setBounds(945, 0, 45, 45);
 		getContentPane().add(btnClosePage);
 
@@ -174,7 +174,7 @@ public class Login_UI extends JFrame implements ActionListener {
 //			}
 
 			if (TK != null) {
-				if (TK.getNV().isTrangThai() == true) {
+				if (TK.getNV().isTrangThai()) {
 					return true;
 				} else {
 					alertNotification("NHÂN VIÊN ĐÃ NGHỈ LÀM! KHÔNG THỂ ĐĂNG NHẬP");

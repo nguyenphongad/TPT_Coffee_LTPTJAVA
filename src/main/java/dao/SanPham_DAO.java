@@ -10,7 +10,10 @@ import util.EntityManagerFactory;
 
 public class SanPham_DAO {
 	private EntityManager em = EntityManagerFactory.getInstance().getEntityManager();
-
+	// Setter để inject EntityManager
+	public void setEntityManager(EntityManager em) {
+		this.em = em;
+	}
 	public SanPham getSanPhamtheoMa(String maSP) {
 		SanPham sanPham = null;
 
@@ -27,7 +30,7 @@ public class SanPham_DAO {
 
 		return sanPham;
 	}
-	
+
 	// Generate randomly ID
 	public String getMaSPTuDong() {
 		String maSPLonNhat = null;
