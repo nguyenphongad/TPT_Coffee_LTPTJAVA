@@ -24,11 +24,6 @@ public class Main_UI extends JFrame {
 		setTitle("VPTCoffee | HỆ THỐNG CỬA HÀNG BÁN CÀ PHÊ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
-		
-		// rong full man hinh
-//		setExtendedState(JFrame.MAXIMIZED_BOTH);
-		
 		setSize(1370, 720);
 		setLocationRelativeTo(null);
 		

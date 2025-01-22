@@ -1,9 +1,5 @@
 package ui;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
-import util.EntityManagerFactory;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;

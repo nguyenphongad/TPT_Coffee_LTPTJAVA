@@ -2,295 +2,192 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import connectDB.ConnectDB;
 import entity.ChiTietHoaDon;
 import entity.HoaDon;
-import entity.KhachHang;
-import entity.NhanVien;
+
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import util.EntityManagerFactory;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HoaDon_DAO {
 	private EntityManager em = EntityManagerFactory.getInstance().getEntityManager();
-	
 
-	public HoaDon getHoaDon(ResultSet resultSet) {
+	public List<HoaDon> getAllHoaDon() {
+		List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
+
 		try {
 			em.getTransaction().begin();
-			String maHD = resultSet.getString("maHD");
-			Timestamp ngayLap = resultSet.getTimestamp("ngayLap");
-			String maNV = resultSet.getString("maNV");
-			String sdt = resultSet.getString("soDienThoai");
-			int tongTien = resultSet.getInt("tongTien");
-			
-			KhachHang_DAO khachHang_DAO = new KhachHang_DAO();
-			NhanVien_DAO nhanVien_DAO = new NhanVien_DAO();
-			
-			NhanVien nv = nhanVien_DAO.getNhanVienTheoMa(maNV);
-			KhachHang kh = khachHang_DAO.getKhachHangTheoSDT(sdt);
+
+			TypedQuery<HoaDon> query = em.createQuery(
+					"SELECT h FROM HoaDon h",
+					HoaDon.class
+			);
+
+			hoaDonList.addAll(query.getResultList());
 
 			em.getTransaction().commit();
-
-			return new HoaDon(maHD, ngayLap.toLocalDateTime(), nv, kh, tongTien);
-
 		} catch (Exception e) {
-			// TODO: handle exception
 			em.getTransaction().rollback();
 			e.printStackTrace();
-		} 
-		return null;
-	}
-	
-	public List<HoaDon> getAllHoaDon() {
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-		List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-		
-		try {
-			connection = ConnectDB.getConnection();
-			preparedStatement = connection.prepareStatement("Select * From HoaDon");
-			
-			resultSet = preparedStatement.executeQuery();
+		}
 
-	            while (resultSet.next()) {
-	                HoaDon hoaDon = getHoaDon(resultSet);
-	                hoaDonList.add(hoaDon);
-	            }
-
-	            resultSet.close();
-	            preparedStatement.close();   
-	            
-	            return hoaDonList;
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} 
-		return null;
+		return hoaDonList;
 	}
-	
+
 	public HoaDon getHoaDontheoMa(String maHD) {
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
 		HoaDon hoaDon = null;
-		
+
 		try {
-			connection = ConnectDB.getConnection();
-			preparedStatement = connection.prepareStatement("Select * From HoaDon Where maHD = ?");
-			preparedStatement.setString(1, maHD);
-			resultSet = preparedStatement.executeQuery();
-			
-			if(resultSet.next()) hoaDon = getHoaDon(resultSet);
-			
-			preparedStatement.close();
-			resultSet.close();
-			
-			return hoaDon;
+			em.getTransaction().begin();
+
+			// Using find method for primary key lookup
+			hoaDon = em.find(HoaDon.class, maHD);
+
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			em.getTransaction().rollback();
 			e.printStackTrace();
 		}
-		
-		return null;
+
+		return hoaDon;
 	}
-	
+
 	public int tongSoHoaDonTheoThang(int thang) {
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
 		int soHoaDon = 0;
+
 		try {
-			connection = ConnectDB.getConnection();
-			preparedStatement = connection.prepareStatement("Select count(*) as soHoaDon From HoaDon Where Month(ngayLap) = ? ");
-			preparedStatement.setInt(1, thang);
-			resultSet = preparedStatement.executeQuery();
-		
-			if(resultSet.next()) soHoaDon = resultSet.getInt("soHoaDon");
-		
-			preparedStatement.close();
-			resultSet.close();
-			
+			em.getTransaction().begin();
+
+			TypedQuery<Long> query = em.createQuery(
+					"SELECT COUNT(h) FROM HoaDon h WHERE FUNCTION('MONTH', h.ngayLap) = :thang",
+					Long.class
+			);
+			query.setParameter("thang", thang);
+
+			soHoaDon = query.getSingleResult().intValue();
+
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			em.getTransaction().rollback();
 			e.printStackTrace();
 		}
+
 		return soHoaDon;
 	}
-	
+
 	public double tongDoanhThuTheoTungNgayTrongThang(int day, int month) {
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
 		double tongDoanhThu = 0;
-		
+
 		try {
-			connection = ConnectDB.getConnection();
-			preparedStatement = connection.prepareStatement("Select sum(tongTien) as tongDoanhThu From HoaDon Where Month(ngayLap) = ? and Day(ngayLap) = ?");
-			preparedStatement.setInt(1, month);
-			preparedStatement.setInt(2, day);
-			resultSet = preparedStatement.executeQuery();
-			
-			if(resultSet.next()) tongDoanhThu = resultSet.getDouble("tongDoanhThu");
-			preparedStatement.close();
-			resultSet.close();
+			em.getTransaction().begin();
+
+			TypedQuery<Double> query = em.createQuery(
+					"SELECT SUM(hd.tongTien) FROM HoaDon hd WHERE FUNCTION('MONTH', hd.ngayLap) = :month AND FUNCTION('DAY', hd.ngayLap) = :day",
+					Double.class
+			);
+			query.setParameter("month", month);
+			query.setParameter("day", day);
+
+			Double result = query.getSingleResult();
+			tongDoanhThu = result != null ? result : 0;
+
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			em.getTransaction().rollback();
 			e.printStackTrace();
 		}
+
 		return tongDoanhThu;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// lay ma HD tụ dong
 	public String getMaHDTuDong() {
-		ConnectDB.getInstance();
-		PreparedStatement st = null;
-		ResultSet rs = null;
 		String maHDLonNhat = null;
+
 		try {
-			Connection conn = ConnectDB.getConnection();
-			String querry = "SELECT MAX(maHD) AS maHDMax FROM HoaDon";
-			st = conn.prepareStatement(querry);
-			rs = st.executeQuery();
+			em.getTransaction().begin();
 
-			if (rs.next()) {
-				maHDLonNhat = rs.getString("maHDMax");
-			}
+			TypedQuery<String> query = em.createQuery(
+					"SELECT MAX(hd.maHD) FROM HoaDon hd",
+					String.class
+			);
 
+			maHDLonNhat = query.getSingleResult();
+
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO: handle exception
-		} finally {
-			try {
-				if (st != null) {
-					st.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			em.getTransaction().rollback();
+			e.printStackTrace();
 		}
+
 		return maHDLonNhat;
 	}
+
 	
 	// them hoa don
 	public boolean themHoaDon(HoaDon hd) {
-		ConnectDB.getInstance();
-		PreparedStatement st = null;
-		int n = 0;
+		boolean isSuccess = false;
+
 		try {
-			Connection conn = ConnectDB.getConnection();
-			String query = "insert into [dbo].[HoaDon] values(?,?,?,?,?)";
-			st = conn.prepareStatement(query);
-			st.setString(1, hd.getMaHD());
-			st.setTimestamp(2, Timestamp.valueOf(hd.getNgayLap()));
-			st.setString(3, hd.getNhanVien().getMaNV());
-			st.setString(4, hd.getKhachHang().getSoDienThoai());
-			st.setDouble(5, hd.getTongTien());
-			n = st.executeUpdate();
-			
-		} catch (SQLException e) {
-			// TODO: handle exception
+			em.getTransaction().begin();
+
+			em.persist(hd);
+
+			em.getTransaction().commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
 			e.printStackTrace();
-		} finally {
-			try {
-				st.close();
-			} catch (SQLException e2) {
-				// TODO: handle exception
-				e2.printStackTrace();
-			}
 		}
-		
-		
-		return n>0;
+
+		return isSuccess;
 	}
-	
-	
+
 	// them chi tiet hoa don
-	
 	public boolean themChiTietHoaDon(ChiTietHoaDon cthd) {
-		ConnectDB.getInstance();
-		PreparedStatement st = null;
-		int n = 0;
+		boolean isSuccess = false;
+
 		try {
-			Connection conn = ConnectDB.getConnection();
-			String query = "insert into [dbo].[ChiTietHoaDon] values(?,?,?,?,?)";
-			st = conn.prepareStatement(query);
-			st.setString(1, cthd.getHoaDon().getMaHD());
-			st.setString(2, cthd.getSanPham().getMaSP());
-			st.setInt(3, cthd.getSoLuong());
-			st.setInt(4, cthd.getSoDiemTichLuy());
-			st.setString(5, cthd.getGhiChu());
-			n = st.executeUpdate();
-			
-		} catch (SQLException e) {
-			// TODO: handle exception
+			em.getTransaction().begin();
+
+			em.persist(cthd);
+
+			em.getTransaction().commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
 			e.printStackTrace();
-		} finally {
-			try {
-				st.close();
-			} catch (SQLException e2) {
-				// TODO: handle exception
-				e2.printStackTrace();
-			}
 		}
-		
-		
-		return n>0;
+
+		return isSuccess;
 	}
-	
+
 	// cong diem tich luy vao tong diem tich luy khach hang
 	public boolean congDiemVaoKH(int diem, String sdt) {
-		ConnectDB.getInstance();
-		PreparedStatement st = null;
-		int n = 0;
+		boolean isSuccess = false;
+
 		try {
-			Connection conn = ConnectDB.getConnection();
-			String query = "update [dbo].[KhachHang] set tongDiemTichLuy = ? where [soDienThoai] = ?";
-			st = conn.prepareStatement(query);
-			
-			st.setInt(1, diem);
-			st.setString(2, sdt);
-			
-			n = st.executeUpdate();
-			
-		} catch (SQLException e) {
-			// TODO: handle exception
+			em.getTransaction().begin();
+
+			Query query = em.createQuery("UPDATE KhachHang kh SET kh.tongDiemTichLuy = :diem WHERE kh.soDienThoai = :sdt");
+			query.setParameter("diem", diem);
+			query.setParameter("sdt", sdt);
+
+			int rowsUpdated = query.executeUpdate();
+
+			em.getTransaction().commit();
+			isSuccess = rowsUpdated > 0;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
 			e.printStackTrace();
-		} finally {
-			try {
-				st.close();
-			} catch (SQLException e2) {
-				// TODO: handle exception
-				e2.printStackTrace();
-			}
 		}
-		
-		
-		return n>0;
+
+		return isSuccess;
 	}
-	
-	
-	
-	
-	
-	
 }

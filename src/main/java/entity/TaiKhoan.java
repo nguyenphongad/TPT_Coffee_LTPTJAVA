@@ -12,7 +12,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "NV")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
 public class TaiKhoan {

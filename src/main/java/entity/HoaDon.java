@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString()
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HoaDon {
 	@Id

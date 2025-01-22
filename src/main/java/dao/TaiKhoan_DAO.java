@@ -1,52 +1,34 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
-import connectDB.ConnectDB;
-import entity.NhanVien;
 import entity.TaiKhoan;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import util.EntityManagerFactory;
 
 public class TaiKhoan_DAO {
-	public ArrayList<TaiKhoan> getAllTaiKhoan(){
+	private EntityManager em = EntityManagerFactory.getInstance().getEntityManager();
+
+	public ArrayList<TaiKhoan> getAllTaiKhoan() {
 		ArrayList<TaiKhoan> listTK = new ArrayList<TaiKhoan>();
-		ConnectDB.getInstance();
-		PreparedStatement statement = null;
-		Connection connection = null;
+
 		try {
-			connection = ConnectDB.getConnection();
-			String querry = "SELECT * from TaiKhoan";
-			statement = connection.prepareStatement(querry);
-			ResultSet rs = statement.executeQuery();
-			while(rs.next()) {
-				NhanVien nv = new NhanVien(rs.getString("maNV"));
-				TaiKhoan tKhoan = new TaiKhoan(nv, rs.getString("matKhau"));
-				listTK.add(tKhoan);
-			}
-			rs.close();
+			em.getTransaction().begin();
+
+			TypedQuery<TaiKhoan> query = em.createQuery(
+					"SELECT t FROM TaiKhoan t JOIN FETCH t.NV",
+					TaiKhoan.class
+			);
+
+			listTK.addAll(query.getResultList());
+
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			em.getTransaction().rollback();
 			e.printStackTrace();
-		}finally {
-			if (statement != null)
-				try {
-					statement.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		     if (connection != null)
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		     
 		}
+
 		return listTK;
 	}
 }

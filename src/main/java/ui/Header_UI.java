@@ -90,15 +90,10 @@ public class Header_UI extends JPanel implements ActionListener{
 		}else if(main.taiKhoan.getNV().getChucVu()==0){
 			lblChucVu.setText("- NHÂN VIÊN");
 		}
-		
-		
-		
-		
-		
-		
+
 		pnlControl.add(btnLogout);
-		
 	}
+
 	// ham dong ho
 	public void clock() {
 		clock = new Thread() {
@@ -150,6 +145,7 @@ public class Header_UI extends JPanel implements ActionListener{
 	            return ""; // Trường hợp không xác định
 	    }
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object o = e.getSource();

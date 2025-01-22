@@ -22,9 +22,7 @@ public class HoaDon_UI extends JPanel{
 		tabbedPane.setForeground(Color.decode("#B16E5C"));
 		tabbedPane.setBorder(null);
 		add(tabbedPane);
-		
-		
-		
+
 		// tab quan ly hoa don
 		JPanel pnlQuanLyHoaDon = new JPanel();
 		

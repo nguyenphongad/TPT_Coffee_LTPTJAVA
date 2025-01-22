@@ -668,21 +668,14 @@ public class NhanVien_TimKiem_UI extends JPanel implements ActionListener, Mouse
 	private void timAction() {
 		// TODO Auto-generated method stub
 		NhanVien nvTim = convertDataToNhanVien();
+
 		if(nvTim != null) {
 			ArrayList<NhanVien> listKetQuaTimKiem = new ArrayList<NhanVien>();
 			listKetQuaTimKiem = nv_dao.timNhanVien(nvTim.getMaNV(), nvTim.getTenNV(), nvTim.isGioiTinh(), nvTim.getNgaySinh(), nvTim.getSDT(), nvTim.getEmail(), nvTim.getMaCCCD(), nvTim.getDiaChi(), nvTim.getNgayVaoLam(), nvTim.isTrangThai(), nvTim.getChucVu());
-//			System.out.println("check tim action: " + nvTim.toString());
+
 			if(nvTim.getTenNV() == null) {
 				System.out.println("ĐÂY LÀ NULL");}
-//			}else if(nvTim.getTenNV().isEmpty()){
-//				System.out.println("ĐÂY LÀ ISEMPTY");
-//			}
-//			else if(nvTim.getTenNV().isBlank()) {
-//				System.out.println("ĐÂY LÀ BLANK");
-//			}
-			else {
-				//System.out.println("ĐÂY KO LÀ CÁI GÌ CẢ");
-			}
+
 			if(listKetQuaTimKiem != null) {
 				themAllNhanVienVaoBang(listKetQuaTimKiem);
 				JOptionPane.showMessageDialog(null, "Tìm thấy " + dataTableModel.getRowCount() + " nhân viên thỏa điều kiện.");
@@ -693,65 +686,6 @@ public class NhanVien_TimKiem_UI extends JPanel implements ActionListener, Mouse
 		}
 	}
 	
-//	private void timAction() {
-//		// TODO Auto-generated method stub
-//		NhanVien nvTim = convertDataToNhanVien();
-//		
-////		String maNV = txtTimKiemMaNV.getText();
-////		String hoTen = txtTimKiemHoTen.getText();
-////		Date ngaySinh = null;
-////		if(TimKiemNgaySinh.getDate() != null) {
-////			ngaySinh = new Date(TimKiemNgaySinh.getDate().getTime());
-////		}
-////		boolean gioiTinh;
-////		if(checkBoxTimKiemNam.isSelected() == true)
-////			gioiTinh = true;
-////		else
-////			gioiTinh = false;
-////		String sdt = txtTimKiemSDT.getText();
-////		String diaChi = txtTimKiemDiaChi.getText();
-////		Date ngayVaoLam = null;
-////		if(TimKiemNgayVaoLam.getDate() != null) {
-////			ngayVaoLam = new Date(TimKiemNgayVaoLam.getDate().getTime());
-////		}
-////		int chucVu = listChucVuTimKiem.getSelectedIndex();
-////		boolean trangThai = listTrangThaiTimKiem.getSelectedIndex() == 1;
-////		String email = txtTimKiemEmail.getText();
-////		String maCCCD = txtTimKiemCCCD.getText();
-////		String ghiChu = "";
-////		String urlAnh = "";
-////		
-////		NhanVien nVien = new NhanVien(maNV, hoTen, hoTen, gioiTinh, ngaySinh, sdt, email, maCCCD, diaChi, ngayVaoLam, ghiChu, trangThai, chucVu, urlAnh);
-//		listKetQuaTimKiem = new NhanVien_DAO().timNhanVien(maNV, hoTen, gioiTinh, ngaySinh, sdt, email,maCCCD, diaChi, ngayVaoLam, trangThai,chucVu);
-//
-//		
-////		
-////		
-////		
-////		if(listKetQuaTimKiem.size()!=0) {
-////			themAllNhanVienVaoBang(listKetQuaTimKiem);
-////			JOptionPane.showMessageDialog(null, "Tìm thấy " + dataTableModel.getRowCount() + " nhân viên thỏa điều kiện.");
-////		}else {
-////			themAllNhanVienVaoBang(listKetQuaTimKiem);
-////			JOptionPane.showMessageDialog(null, "Không tìm thấy nhân viên nào thỏa điều kiện.");
-////		}
-////		
-//		
-//		if(nvTim != null) {
-//			
-//			//listKetQuaTimKiem = nv_dao.timNhanVien(nvTim.getMaNV(), nvTim.getTenNV(), nvTim.isGioiTinh(), nvTim.getNgaySinh(), nvTim.getSDT(), nvTim.getEmail(), nvTim.getMaCCCD(), nvTim.getDiaChi(), nvTim.getNgayVaoLam(), nvTim.isTrangThai(), nvTim.getChucVu());
-//			System.out.println("check tim action: " + nvTim.toString());
-//			
-//			if(listKetQuaTimKiem != null) {
-//				themAllNhanVienVaoBang(listKetQuaTimKiem);
-//				JOptionPane.showMessageDialog(null, "Tìm thấy " + dataTableModel.getRowCount() + " nhân viên thỏa điều kiện.");
-//			}
-//			else {
-//				JOptionPane.showMessageDialog(null, "Không tìm thấy nhân viên nào thỏa điều kiện.");
-//			}
-//		}
-//	}
-
 	private NhanVien convertDataToNhanVien() {
 		String maNV = txtTimKiemMaNV.getText();
 		String hoTen = txtTimKiemHoTen.getText();
@@ -787,15 +721,15 @@ public class NhanVien_TimKiem_UI extends JPanel implements ActionListener, Mouse
 		row[0] = String.valueOf(dataTableModel.getRowCount() + 1);
 		row[1] = nv.getMaNV();
 		row[2] = nv.getTenNV();
-		row[3] = nv.isGioiTinh() == true ? "Nam" : "Nữ";
+		row[3] = nv.isGioiTinh() ? "Nam" : "Nữ";
 //		row[4] = nv.getNgaySinh().toString();
 		row[5] = nv.getSDT();
 		row[6] = nv.getEmail();
 		row[7] = nv.getDiaChi();
 		row[8] = nv.getMaCCCD();
 //		row[9] = nv.getNgayVaoLam().toString();
-		row[10]= nv.isTrangThai() == true ? "Đang làm" : "Đã nghỉ";
-		row[11]= listChucVuTimKiem.getItemAt(nv.getChucVu()).toString();
+		row[10]= nv.isTrangThai() ? "Đang làm" : "Đã nghỉ";
+		row[11]= listChucVuTimKiem.getItemAt(nv.getChucVu());
 		row[12]= nv.getGhiChu();
 		dataTableModel.addRow(row);
  	}

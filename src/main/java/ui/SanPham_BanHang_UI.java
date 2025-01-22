@@ -19,7 +19,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -1090,10 +1089,7 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 
 	// KIỂM TRA KHÁCH HÀNG QUA SỐ ĐIỆN THOẠI
 	public void kiemTraTichDiemKH() {
-		int sdtCanTim = Integer.valueOf(txtSdtKH.getText());
-
-		//DAO
-		khachHangDS = khachHang_dao.timSoDienThoaiKhachHang(sdtCanTim);
+		khachHangDS = khachHang_dao.timSoDienThoaiKhachHang(txtSdtKH.getText().trim());
 
 		if (khachHangDS.size() != 0) {
 

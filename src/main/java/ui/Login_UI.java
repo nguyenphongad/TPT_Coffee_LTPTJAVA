@@ -28,7 +28,6 @@ import javax.swing.JTextField;
 public class Login_UI extends JFrame implements ActionListener {
 
 	ImageIcon appIcon = new ImageIcon("res/image/icon_logo.PNG");
-	ImageIcon imgBgr = new ImageIcon("res/image/image_quan.png");
 	private JButton btnClosePage;
 	private JTextField txtMaNv;
 	private JPasswordField txtMatKhau;
@@ -123,9 +122,6 @@ public class Login_UI extends JFrame implements ActionListener {
 		lblImageLogo.setIcon(new ImageScaler("/image/logo_VPTCoffee_line.PNG", 405, 390).getScaledImageIcon());
 		pnlLogo.add(lblImageLogo, BorderLayout.CENTER);
 
-//		JLabel lblBackground = new JLabel(imgBgr);
-//		lblBackground.setBounds(0, 0, 955, 500);
-//		getContentPane().add(lblBackground);
 
 		btnClosePage = new JButton("×");
 		btnClosePage.setBackground(Color.decode("#B16E5C"));
@@ -212,7 +208,6 @@ public class Login_UI extends JFrame implements ActionListener {
 			new Login_UI();
 		});
 	}
-	// ALERT
 
 	public void alertNotification(String textError) {
 		JOptionPane.showMessageDialog(null, textError);
