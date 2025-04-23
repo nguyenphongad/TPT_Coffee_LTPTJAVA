@@ -133,7 +133,7 @@ public class HoaDon_DAO {
 	// them hoa don
 	public boolean themHoaDon(HoaDon hd) {
 		boolean isSuccess = false;
-
+		System.out.print(hd);
 		try {
 			em.getTransaction().begin();
 

@@ -43,6 +43,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
+import dao.NhanVien_DAO;
 import org.jdesktop.swingx.JXDatePicker;
 
 import customUI.ImageScaler;
@@ -57,6 +58,7 @@ import entity.KhachHang;
 import entity.NhanVien;
 import entity.SanPham;
 import util.SinhMaTuDong_UTIL;
+import util.XuatPDF_UTIL;
 
 import java.awt.Color;
 
@@ -69,13 +71,13 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 
 public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseListener {
-
 	private ArrayList<SanPham> sanPhamDS;
 	private ArrayList<KhachHang> khachHangDS;
 	private ChiTietHoaDon chiTietHoaDon;
 
 	private KhachHang_DAO khachHang_dao = new KhachHang_DAO();
-
+	private NhanVien_DAO nhanVien_dao = new NhanVien_DAO();
+	private SanPham_DAO sanPham_dao = new SanPham_DAO();
 	private RoundedButton btnAddHD, btnXoa, btnHuy, btnThanhToan, btnTimKH, btnXoaRong, btnDangKy;
 
 	private static DefaultTableModel dtbModelODSP;
@@ -174,7 +176,7 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 		// add san pham menu
 		for (SanPham sp : sanPhamDS) {
 			if (new SanPham_DAO().kiemTraMaSP(sp.getMaSP())) {
-
+				System.out.print("ok");
 			} else {
 				new SanPham_DAO().themSanPham(sp);
 			}
@@ -633,10 +635,8 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 						for (int i = 0; i < dtbModelODSP.getRowCount(); i++) {
 							String rowMaSP = (String) dtbModelODSP.getValueAt(i, 1);
 							if (maSP.equals(rowMaSP)) {
-
 								String sl = String.valueOf(dtbModelODSP.getValueAt(i, 4));
 								String thanhTienF = String.valueOf(finalProduct.getDonGia());
-
 								Integer soLuong = convertToInteger(sl);
 
 								if (soLuong != null) {
@@ -647,14 +647,10 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 								Double thanhTien = convertToDouble(thanhTienF);
 								if (thanhTien != null && soLuong != null) {
 									double newTotal = soLuong * thanhTien;
-
 									DecimalFormat decimalFormat = new DecimalFormat("#,##0");
-
 									dtbModelODSP.setValueAt(String.valueOf(decimalFormat.format(newTotal)), i, 5);
 								}
-
 								existed = true;
-
 								tinhToanGiaTri();
 								break;
 							}
@@ -687,12 +683,9 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 
 					@Override
 					public void mouseEntered(MouseEvent e) {
-
 						if (finalProduct.isTrangThai()) {
 							pnlThongTinSP.setBackground(Color.decode("#f4f4f4"));
 							pnlBottomTTSP.setBackground(Color.decode("#f4f4f4"));
-
-						} else {
 
 						}
 					}
@@ -702,14 +695,11 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 						if (finalProduct.isTrangThai()) {
 							pnlThongTinSP.setBackground(Color.decode("#ffffff"));
 							pnlBottomTTSP.setBackground(Color.decode("#ffffff"));
-						} else {
-
 						}
 					}
 				});
 
 				pnlRenderSP.add(pnlThongTinSP);
-
 			}
 		}
 	}
@@ -1467,38 +1457,34 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 				String sdtKH = txtSdtKH.getText();
 				String tenKH = txtTenKH.getText();
 
-				if (tenKH.equalsIgnoreCase("")) {
-					sdtKH = "0";
-				}
+				if (tenKH.equalsIgnoreCase("")) sdtKH = "0";
+
 
 				String stTongTien = txtTongTienThanhToan.getText();
 				double fmTongTien;
 				try {
 					fmTongTien = decimalFormat.parse(stTongTien).doubleValue();
-					NhanVien nvNew = new NhanVien(maNV);
-					KhachHang khNew = new KhachHang(sdtKH);
+					NhanVien nvNew = nhanVien_dao.getNhanVienTheoMa(maNV);
+					KhachHang khNew = sdtKH != null ? khachHang_dao.getKhachHangTheoSDT(sdtKH) : null;
+					System.out.print(nvNew);
+					System.out.print(khNew);
 
-					// -------- HoaDon
-					HoaDon hdnew = new HoaDon(maHd, localDateTimeNgayLap, nvNew, khNew, fmTongTien);
+					HoaDon hdNew = new HoaDon(maHd, localDateTimeNgayLap, nvNew, khNew, fmTongTien);
 
-//					System.out.println(maHd + " - "+ localDateTimeNgayLap + " - "+ nvNew.getMaNV() 
-//					+ " - "+ khNew.getSoDienThoai() + " - "+fmTongTien);
-
-					// ------------- ChiTietHoaDon
-
+					List<SanPham> selectedSanPhamList = new ArrayList<>();
 					if (maHd != null) {
-						if (new HoaDon_DAO().themHoaDon(hdnew)) {
+						if (new HoaDon_DAO().themHoaDon(hdNew)) {
 							for (int i = 0; i < dtbModelODSP.getRowCount(); i++) {
 								String maSPnew = (String) dtbModelODSP.getValueAt(i, 1);
 								int soLuongSP = Integer.parseInt(dtbModelODSP.getValueAt(i, 4).toString());
-								SanPham spnewCTHD = new SanPham(maSPnew);
+								SanPham spnewCTHD = sanPham_dao.getSanPhamtheoMa(maSPnew);
+								selectedSanPhamList.add(spnewCTHD);
 
 								int sdtlCTHD = soDiemTichLuy;
 								String ghiChunewCTHD = teaGhiChu.getText();
 
 								HoaDon maHD = new HoaDon(maHd);
-								ChiTietHoaDon cthdnew = new ChiTietHoaDon(maHD, spnewCTHD, sdtlCTHD, soLuongSP,
-										ghiChunewCTHD);
+								ChiTietHoaDon cthdnew = new ChiTietHoaDon(maHD, spnewCTHD, sdtlCTHD, soLuongSP, ghiChunewCTHD);
 
 								chiTietHoaDon = cthdnew;
 
@@ -1506,32 +1492,29 @@ public class SanPham_BanHang_UI extends JPanel implements ActionListener, MouseL
 
 								int diemTL = 0;
 
-								if (!txtDiemTL.getText().equalsIgnoreCase("")) {
-									diemTL = Integer.valueOf(txtDiemTL.getText());
-								} else {
-									diemTL = 0;
-								}
+								if (!txtDiemTL.getText().equalsIgnoreCase("")) diemTL = Integer.valueOf(txtDiemTL.getText());
+								else diemTL = 0;
+
 
 								String sdtKHCong = txtSdtKH.getText();
 
-								if (tenKH.equalsIgnoreCase("")) {
-									sdtKHCong = "0";
-								}
+								if (tenKH.equalsIgnoreCase("")) sdtKHCong = "0";
+
 
 								new HoaDon_DAO().congDiemVaoKH((diemTL + sdtlCTHD), sdtKHCong);
-
 							}
-							;
 							alertNotification("TẠO HOÁ ĐƠN THÀNH CÔNG");
 							xoaRong();
 
 							dlQR.dispose();
 
-//							try {
-//								new XuatPDF_UTIL().xuatHoaDon(chiTietHoaDon, sanPhamDS);
-//							} catch (Exception e2) {
-//								e2.printStackTrace();
-//							}
+							if(cbInHoaDon.isSelected()) {
+								try {
+									new XuatPDF_UTIL().xuatHoaDon(nvNew, khNew, selectedSanPhamList);
+								} catch (Exception e2) {
+									e2.printStackTrace();
+								}
+							}
 
 						} else {
 							alertNotification("TẠO HOÁ ĐƠN KHÔNG THÀNH CÔNG!!!");

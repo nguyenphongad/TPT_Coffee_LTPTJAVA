@@ -18,10 +18,10 @@ public class HoaDon {
 	String maHD;
 	LocalDateTime ngayLap;
 	@ManyToOne
-	@JoinColumn(name = "maNV", nullable = false)
+	@JoinColumn(name = "maNV")
 	NhanVien nhanVien;
 	@ManyToOne
-	@JoinColumn(name= "maKh", nullable = false)
+	@JoinColumn(name= "maKh", nullable = true)
 	KhachHang khachHang;
 	double tongTien;
 

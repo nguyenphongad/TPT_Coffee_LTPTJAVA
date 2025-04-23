@@ -1,38 +1,57 @@
 package util;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import entity.ChiTietHoaDon;
+import com.lowagie.text.*;
+import com.lowagie.text.pdf.*;
+import entity.KhachHang;
+import entity.NhanVien;
 import entity.SanPham;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.view.JasperViewer;
+
+import java.io.FileOutputStream;
+import java.util.List;
+
+
 
 public class XuatPDF_UTIL {
-	public void xuatHoaDon(ChiTietHoaDon cthd, ArrayList<SanPham> dssp) throws JRException {
-		InputStream arq = getClass().getResourceAsStream("/export_template/HoaDon.jrxml");
-		JasperReport report = JasperCompileManager.compileReport(arq);
+	public void xuatHoaDon(NhanVien nhanVien, KhachHang khachHang, List<SanPham> dsSanPham) throws Exception {
+		Document document = new Document();
+		PdfWriter.getInstance(document, new FileOutputStream("invoice.pdf"));
+		document.open();
 
-		Map<String, Object> tthd = new HashMap<String, Object>();
+		Font titleFont = new Font(Font.HELVETICA, 18, Font.BOLD);
+		Font normalFont = new Font(Font.HELVETICA, 12);
+		Font boldFont = new Font(Font.HELVETICA, 12, Font.BOLD);
 
-		tthd.put("time", cthd.getHoaDon().getNgayLap());
-		tthd.put("soDienThoai", cthd.getHoaDon().getMaHD());
+		document.add(new Paragraph("HÓA ĐƠN BÁN HÀNG", titleFont));
+		document.add(new Paragraph(" "));
 
-		ArrayList<SanPhamForm> listSP = new ArrayList<>();
-		for (int i = 0; i < dssp.size(); i++) {
-			listSP.add(new SanPhamForm(String.valueOf(i), dssp.get(i).getMaSP(), dssp.get(i).getTenSP(),
-					dssp.get(i).getDonGia()));
+		document.add(new Paragraph("Nhân viên: " + nhanVien.getTenNV() + " - " + nhanVien.getMaNV(), normalFont));
+		if(khachHang != null) document.add(new Paragraph("Khách hàng: " + khachHang.getTenKH() + " - SĐT: " + khachHang.getSoDienThoai(), normalFont));
+		document.add(new Paragraph(" "));
+
+		PdfPTable table = new PdfPTable(3);
+		table.setWidthPercentage(100);
+		table.setWidths(new float[]{2, 5, 2});
+
+		table.addCell(new PdfPCell(new Phrase("Mã SP", boldFont)));
+		table.addCell(new PdfPCell(new Phrase("Tên SP", boldFont)));
+		table.addCell(new PdfPCell(new Phrase("Giá", boldFont)));
+
+		double total = 0;
+		for (SanPham p : dsSanPham) {
+			table.addCell(p.getMaSP());
+			table.addCell(p.getTenSP());
+			table.addCell(String.format("%,.0f VNĐ", p.getDonGia()));
+			total += p.getDonGia();
 		}
-		JasperPrint print = JasperFillManager.fillReport(report, tthd, new JRBeanCollectionDataSource(listSP));
 
-		JasperViewer.viewReport(print, false);
+		document.add(table);
+		document.add(new Paragraph(" "));
 
+		Paragraph totalPara = new Paragraph("TỔNG TIỀN: " + String.format("%,.0f VNĐ", total), boldFont);
+		totalPara.setAlignment(Element.ALIGN_RIGHT);
+		document.add(totalPara);
+
+		document.close();
+		System.out.println("PDF đã được tạo thành công.");
 	}
 }

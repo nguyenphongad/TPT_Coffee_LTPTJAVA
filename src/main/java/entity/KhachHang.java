@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@ToString()
+@ToString(exclude = "hoaDons")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class KhachHang {
 	@Id
