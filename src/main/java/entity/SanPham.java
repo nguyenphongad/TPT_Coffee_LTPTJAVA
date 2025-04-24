@@ -6,6 +6,7 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -16,7 +17,7 @@ import java.util.Objects;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-public class SanPham {
+public class SanPham implements Serializable {
 	@Id
 	String maSP;
 	String tenSP;

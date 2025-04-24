@@ -3,6 +3,8 @@ package entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString()
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class HoaDon {
+public class HoaDon implements Serializable {
 	@Id
 	String maHD;
 	LocalDateTime ngayLap;

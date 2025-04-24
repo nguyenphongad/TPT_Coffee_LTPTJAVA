@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.io.Serializable;
+
 @Entity
 @Table
 @Getter
@@ -13,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode
-public class ChiTietHoaDon {
+public class ChiTietHoaDon implements Serializable {
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "maHD", nullable = false)

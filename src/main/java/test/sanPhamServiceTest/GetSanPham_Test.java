@@ -2,16 +2,25 @@ package test.sanPhamServiceTest;
 
 import static org.junit.Assert.*;
 
-import dao.SanPham_DAO;
+import dao.impl.SanPham_DAO;
 import entity.SanPham;
 
 import org.junit.Test;
 
+import java.rmi.RemoteException;
+
 public class GetSanPham_Test {
 
 
-    private SanPham_DAO sanPhamDAO = new SanPham_DAO();
-    ;
+    private SanPham_DAO sanPhamDAO;
+
+    {
+        try {
+            sanPhamDAO = new SanPham_DAO();
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    };
 
     @Test
     public void testGetSanPhamtheoMa_InvalidMaSP() {

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0832545c-93b1-49f3-a7a0-4f498b7a1289" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IChiTietHoaDon_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IHoaDon_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IKhachHang_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ILogin_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/INhanVien_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ISanPham_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ITaiKhoan_Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/CustomComboBoxUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/CustomListCellRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/CustomSliderUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/CustomTabbed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/ImageScaler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/PlaceholderTextField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/RoundedBorder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/RoundedButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customUI/RoundedPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ChiTietHoaDon_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/ChiTietHoaDon_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/HoaDon_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/HoaDon_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KhachHang_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/KhachHang_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Login_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/Login_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/NhanVien_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/NhanVien_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SanPham_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SanPham_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaiKhoan_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/TaiKhoan_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/ChiTietHoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/ChiTietHoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/HoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/KhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/NhanVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/NhanVien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/SanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/SanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/TaiKhoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/TaiKhoan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/ChartLib.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-beanutils-1.8.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-codec-1.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-collections-3.2.1-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-collections4-4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-compress-1.18.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-digester-2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/commons-logging-api-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/groovy-all-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/jasperreports-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/jasperreports-fonts-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/jcommon-1.0.23.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/jfreechart-1.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/sqljdbc42.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/swingx-1.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/GetSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/GetSanPham_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/ThemSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/ThemSanPham_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/UpdateSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/UpdateSanPham_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/XoaSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/XoaSanPham_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/BanHang_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Header_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HoaDon_QuanLy_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HoaDon_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Intro_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Login_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Main_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Menu_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/NhanVien_QuanLy_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/NhanVien_TimKiem_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/NhanVien_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/SanPham_BanHang_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/SanPham_QuanLy_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/SanPham_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ThongKe_DoanhThu_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ThongKe_TopSanPham_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ThongKe_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/TrangChu_UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/EntityManagerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/EntityManagerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ImportFont.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SanPhamForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SinhMaTuDong_UTIL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/XuatPDF_UTIL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/export_template/HoaDon.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/down-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_banhang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_doanhthu.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_hoadon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_login.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_logout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_ngungban.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_nhanvien.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_quanly.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_sanpham.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_thongke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_timkiem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icon_topsanpham.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/QR_thanhToan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/bgr_trangchu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/icon_close.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/icon_logo.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/icon_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/image_quan - Copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/image_quan-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/image_quan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/logo_VPTCoffee.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/logo_VPTCoffee_line.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/slide_cf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_NhanVien/defaultavt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_NhanVien/nhanVien.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/anvat_banh_tiramisu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/anvat_kho_ga.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/anvat_mit_say.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/banhmi_banh_mi_nguoi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_americano.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_bac-xiu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_cafe-den.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_cappuccino.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_espresso.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/coffee_latte_da.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/dasay_caramel_arabica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/dasay_phuc_bon_tu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/image_sp_default.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/tea_olong_tu_quy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image_SanPham/tea_tra_dao_cam_sa.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2wAFnqtYKD0Nw8YLhWTJuZnFPiN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Server.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/workspace/java/VPTCoffee-Client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0832545c-93b1-49f3-a7a0-4f498b7a1289" name="Changes" comment="" />
+      <created>1745476643362</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745476643362</updated>
+      <workItem from="1745476646332" duration="28000" />
+      <workItem from="1745476861016" duration="1292000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

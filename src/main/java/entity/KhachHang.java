@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString(exclude = "hoaDons")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class KhachHang {
+public class KhachHang implements Serializable {
 	@Id
 	String soDienThoai;
 	String tenKH;

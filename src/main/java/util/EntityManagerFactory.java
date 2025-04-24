@@ -12,7 +12,7 @@ public class EntityManagerFactory {
     }
 
 	public EntityManager getEntityManager() {
-		em = Persistence.createEntityManagerFactory("MSSQL").createEntityManager();
+		em = Persistence.createEntityManagerFactory("MYSQL").createEntityManager();
         return em;
     }
 	public void close() {

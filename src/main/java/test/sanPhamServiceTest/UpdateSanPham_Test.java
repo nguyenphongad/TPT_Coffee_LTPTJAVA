@@ -1,13 +1,24 @@
 package test.sanPhamServiceTest;
 
-import dao.SanPham_DAO;
+import dao.impl.SanPham_DAO;
 import entity.SanPham;
 import org.junit.Test;
+
+import java.rmi.RemoteException;
 
 import static org.junit.Assert.*;
 
 public class UpdateSanPham_Test {
-    private SanPham_DAO sanPhamDAO = new SanPham_DAO();
+    private SanPham_DAO sanPhamDAO;
+
+    {
+        try {
+            sanPhamDAO = new SanPham_DAO();
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private SanPham sp = new SanPham(
             "SP00001",         // maSP
             "Cà phê Robusta", // tenSP

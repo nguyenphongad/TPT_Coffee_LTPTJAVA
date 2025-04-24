@@ -1,10 +1,11 @@
 package entity;
 
 
-import dao.NhanVien_DAO;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.io.Serializable;
 
 @Entity
 @Table
@@ -15,7 +16,7 @@ import lombok.experimental.FieldDefaults;
 @ToString(exclude = "NV")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-public class TaiKhoan {
+public class TaiKhoan implements Serializable {
 	@Id
 	@OneToOne
 	@JoinColumn(name = "maNV", nullable = false, unique = true)
