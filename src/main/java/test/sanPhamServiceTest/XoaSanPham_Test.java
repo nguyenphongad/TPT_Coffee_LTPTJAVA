@@ -1,45 +1,82 @@
 package test.sanPhamServiceTest;
 
 import dao.impl.SanPham_DAO;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.rmi.RemoteException;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class XoaSanPham_Test {
     private SanPham_DAO sanPhamDAO;
 
-    {
+    @Before
+    public void setUp() {
         try {
             sanPhamDAO = new SanPham_DAO();
         } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to initialize SanPham_DAO", e);
         }
     }
 
     @Test
     public void testXoaSanPham_foundSanPham() {
-        String masp = "SP12388";
-        boolean result = sanPhamDAO.xoaSP(masp);
+        // Arrange
+        String maSP = "SP12388";
 
-        // Kỳ vọng
-        assertTrue(result);
+        // Act
+        boolean result = sanPhamDAO.xoaSP(maSP);
+
+        // Assert
+        assertTrue("Expected the product to be deleted successfully", result);
     }
+
     @Test
     public void testXoaSanPham_notFoundSanPham() {
-        String masp = "SP99999";
-        boolean result = sanPhamDAO.xoaSP(masp);
+        // Arrange
+        String maSP = "SP99999"; // Non-existent product ID
 
-        // Kỳ vọng
-        assertFalse(result);
+        // Act
+        boolean result = sanPhamDAO.xoaSP(maSP);
+
+        // Assert
+        assertFalse("Expected deletion to fail for non-existent product", result);
     }
+
     @Test
-    public void testXoaSanPham_SanPhamDeleted() {
-        String masp = "SP12341";
-        boolean result = sanPhamDAO.xoaSP(masp);
-        // Kỳ vọng
-        assertFalse(result);
+    public void testXoaSanPham_nullMaSP() {
+        // Arrange
+        String maSP = null;
+
+        // Act
+        boolean result = sanPhamDAO.xoaSP(maSP);
+
+        // Assert
+        assertFalse("Expected deletion to fail for null product ID", result);
+    }
+
+    @Test
+    public void testXoaSanPham_emptyMaSP() {
+        // Arrange
+        String maSP = "";
+
+        // Act
+        boolean result = sanPhamDAO.xoaSP(maSP);
+
+        // Assert
+        assertFalse("Expected deletion to fail for empty product ID", result);
+    }
+
+    @Test
+    public void testXoaSanPham_deletedSanPham() {
+        // Arrange
+        String maSP = "SP12341"; // Product already deleted
+
+        // Act
+        boolean result = sanPhamDAO.xoaSP(maSP);
+
+        // Assert
+        assertFalse("Expected deletion to fail for already deleted product", result);
     }
 }
