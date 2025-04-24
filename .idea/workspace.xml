@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0832545c-93b1-49f3-a7a0-4f498b7a1289" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/khachHangServiceTest/DangKySdtTichDiem_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/khachHangServiceTest/GetKhachHangTheoSDT_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/khachHangServiceTest/TimSoDienThoaiKhachHang_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/chiTietHoaDonServiceTest/ChiTietHoaDon_DAO_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connectDB/ConnectDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/GetSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/GetSanPham_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/ThemSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/ThemSanPham_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/UpdateSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/UpdateSanPham_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/XoaSanPham_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/sanPhamServiceTest/XoaSanPham_Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +49,8 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
+    "JUnit.ChiTietHoaDon_DAO_Test.executor": "Run",
+    "JUnit.DangKySdtTichDiem_Test.executor": "Run",
     "JUnit.GetKhachHangTheoSDT_Test.executor": "Run",
     "JUnit.GetSanPham_Test.executor": "Run",
     "JUnit.GetSanPham_Test.testGetSanPhamtheoMa_Found.executor": "Run",
@@ -81,7 +74,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DangKySdtTichDiem_Test">
+  <component name="RunManager" selected="JUnit.ChiTietHoaDon_DAO_Test">
+    <configuration name="ChiTietHoaDon_DAO_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VPTCoffe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.chiTietHoaDonServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.chiTietHoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.chiTietHoaDonServiceTest.ChiTietHoaDon_DAO_Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DangKySdtTichDiem_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
@@ -127,21 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThemSanPham_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VPTCoffe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.sanPhamServiceTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.sanPhamServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.sanPhamServiceTest.ThemSanPham_Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TimSoDienThoaiKhachHang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
@@ -159,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChiTietHoaDon_DAO_Test" />
         <item itemvalue="JUnit.DangKySdtTichDiem_Test" />
         <item itemvalue="JUnit.TimSoDienThoaiKhachHang_Test" />
         <item itemvalue="JUnit.GetKhachHangTheoSDT_Test" />
         <item itemvalue="JUnit.GetSanPham_Test" />
-        <item itemvalue="JUnit.ThemSanPham_Test" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +179,7 @@
       <workItem from="1745476646332" duration="28000" />
       <workItem from="1745476861016" duration="1292000" />
       <workItem from="1745479182037" duration="9285000" />
-      <workItem from="1745493987204" duration="2033000" />
+      <workItem from="1745493987204" duration="2341000" />
     </task>
     <servers />
   </component>
