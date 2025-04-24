@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0832545c-93b1-49f3-a7a0-4f498b7a1289" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/chiTietHoaDonServiceTest/ChiTietHoaDon_DAO_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetAllHoaDon_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetHoaDontheoMa_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetMaHDTuDong_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/ThemHoaDon_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/TongDoanhThuTheoTungNgayTrongThang_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/TongSoHoaDonTheoThang_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,77 +79,77 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ChiTietHoaDon_DAO_Test">
-    <configuration name="ChiTietHoaDon_DAO_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TongSoHoaDonTheoThang_Test">
+    <configuration name="GetMaHDTuDong_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.chiTietHoaDonServiceTest.*" />
+          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.chiTietHoaDonServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.chiTietHoaDonServiceTest.ChiTietHoaDon_DAO_Test" />
+      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.GetMaHDTuDong_Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DangKySdtTichDiem_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThemChiTietHoaDon_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.khachHangServiceTest.*" />
+          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.khachHangServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.khachHangServiceTest.DangKySdtTichDiem_Test" />
+      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.ThemChiTietHoaDon_Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetKhachHangTheoSDT_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThemHoaDon_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.khachHangServiceTest.*" />
+          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.khachHangServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.khachHangServiceTest.GetKhachHangTheoSDT_Test" />
+      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.ThemHoaDon_Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetSanPham_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TongDoanhThuTheoTungNgayTrongThang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.sanPhamServiceTest.*" />
+          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.sanPhamServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.sanPhamServiceTest.GetSanPham_Test" />
+      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.TongDoanhThuTheoTungNgayTrongThang_Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimSoDienThoaiKhachHang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TongSoHoaDonTheoThang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.khachHangServiceTest.*" />
+          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.khachHangServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.khachHangServiceTest.TimSoDienThoaiKhachHang_Test" />
+      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.TongSoHoaDonTheoThang_Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChiTietHoaDon_DAO_Test" />
-        <item itemvalue="JUnit.DangKySdtTichDiem_Test" />
-        <item itemvalue="JUnit.TimSoDienThoaiKhachHang_Test" />
-        <item itemvalue="JUnit.GetKhachHangTheoSDT_Test" />
-        <item itemvalue="JUnit.GetSanPham_Test" />
+        <item itemvalue="JUnit.TongSoHoaDonTheoThang_Test" />
+        <item itemvalue="JUnit.TongDoanhThuTheoTungNgayTrongThang_Test" />
+        <item itemvalue="JUnit.ThemHoaDon_Test" />
+        <item itemvalue="JUnit.ThemChiTietHoaDon_Test" />
+        <item itemvalue="JUnit.GetMaHDTuDong_Test" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +184,7 @@
       <workItem from="1745476646332" duration="28000" />
       <workItem from="1745476861016" duration="1292000" />
       <workItem from="1745479182037" duration="9285000" />
-      <workItem from="1745493987204" duration="2341000" />
+      <workItem from="1745493987204" duration="3075000" />
     </task>
     <servers />
   </component>
