@@ -33,7 +33,7 @@ public class HoaDon_DAO extends UnicastRemoteObject implements IHoaDon_Dao, Seri
 			);
 
 			hoaDonList.addAll(query.getResultList());
-
+			System.out.println(hoaDonList);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			em.getTransaction().rollback();

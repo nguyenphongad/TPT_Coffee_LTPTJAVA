@@ -26,7 +26,7 @@ public class ThemHoaDon_Test {
     @Test
     public void testThemHoaDon_Valid() {
         // Arrange
-        HoaDon hoaDon = new HoaDon("HD001", LocalDateTime.now(), new NhanVien(), null, 1000.0);
+        HoaDon hoaDon = new HoaDon("HD001", LocalDateTime.now(), new NhanVien("NV0009"), null, 1000.0);
 
         // Act
         boolean result = hoaDonDAO.themHoaDon(hoaDon);

@@ -11,6 +11,7 @@
         <class>entity.HoaDon</class>
         <class>entity.ChiTietHoaDon</class>
         <class>entity.NhanVien</class>
+        <class>entity.KhuyenMai</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

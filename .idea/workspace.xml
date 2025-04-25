@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0832545c-93b1-49f3-a7a0-4f498b7a1289" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetAllHoaDon_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetHoaDontheoMa_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/GetMaHDTuDong_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/ThemHoaDon_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/TongDoanhThuTheoTungNgayTrongThang_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/TongSoHoaDonTheoThang_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/KhuyenMai.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/HoaDon_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/HoaDon_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/ThemHoaDon_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/hoaDonServiceTest/ThemHoaDon_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +53,25 @@
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
     "JUnit.ChiTietHoaDon_DAO_Test.executor": "Run",
+    "JUnit.CongDiemVaoKH_Test.executor": "Run",
     "JUnit.DangKySdtTichDiem_Test.executor": "Run",
+    "JUnit.GetAllHoaDon_Test.executor": "Run",
+    "JUnit.GetHoaDontheoMa_Test.executor": "Run",
     "JUnit.GetKhachHangTheoSDT_Test.executor": "Run",
+    "JUnit.GetMaHDTuDong_Test.executor": "Run",
     "JUnit.GetSanPham_Test.executor": "Run",
     "JUnit.GetSanPham_Test.testGetSanPhamtheoMa_Found.executor": "Run",
     "JUnit.GetSanPham_Test.testGetSanPhamtheoMa_InvalidMaSP.executor": "Run",
     "JUnit.GetSanPham_Test.testGetSanPhamtheoMa_NotFound.executor": "Run",
     "JUnit.TestSanPhamDao.executor": "Run",
+    "JUnit.ThemChiTietHoaDon_Test.executor": "Run",
+    "JUnit.ThemHoaDon_Test.executor": "Run",
+    "JUnit.ThemHoaDon_Test.testThemHoaDon_Exception.executor": "Run",
+    "JUnit.ThemHoaDon_Test.testThemHoaDon_Valid.executor": "Run",
     "JUnit.ThemSanPham_Test.executor": "Run",
     "JUnit.TimSoDienThoaiKhachHang_Test.executor": "Run",
+    "JUnit.TongDoanhThuTheoTungNgayTrongThang_Test.executor": "Run",
+    "JUnit.TongSoHoaDonTheoThang_Test.executor": "Run",
     "JUnit.UpdateSanPham_Test.executor": "Run",
     "JUnit.XoaSanPham_Test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -79,33 +87,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TongSoHoaDonTheoThang_Test">
-    <configuration name="GetMaHDTuDong_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="VPTCoffe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.GetMaHDTuDong_Test" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThemChiTietHoaDon_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.Server" />
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.hoaDonServiceTest.*" />
+          <option name="PATTERN" value="server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.ThemChiTietHoaDon_Test" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TongDoanhThuTheoTungNgayTrongThang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThemHoaDon_Test.testThemHoaDon_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +132,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.TongDoanhThuTheoTungNgayTrongThang_Test" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.ThemHoaDon_Test" />
+      <option name="METHOD_NAME" value="testThemHoaDon_Exception" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TongSoHoaDonTheoThang_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThemHoaDon_Test.testThemHoaDon_Valid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VPTCoffe" />
       <extension name="coverage">
         <pattern>
@@ -149,19 +148,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.hoaDonServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.TongSoHoaDonTheoThang_Test" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="test.hoaDonServiceTest.ThemHoaDon_Test" />
+      <option name="METHOD_NAME" value="testThemHoaDon_Valid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TongSoHoaDonTheoThang_Test" />
-        <item itemvalue="JUnit.TongDoanhThuTheoTungNgayTrongThang_Test" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.ThemHoaDon_Test.testThemHoaDon_Valid" />
+        <item itemvalue="JUnit.ThemHoaDon_Test.testThemHoaDon_Exception" />
         <item itemvalue="JUnit.ThemHoaDon_Test" />
-        <item itemvalue="JUnit.ThemChiTietHoaDon_Test" />
-        <item itemvalue="JUnit.GetMaHDTuDong_Test" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +184,7 @@
       <workItem from="1745476646332" duration="28000" />
       <workItem from="1745476861016" duration="1292000" />
       <workItem from="1745479182037" duration="9285000" />
-      <workItem from="1745493987204" duration="3075000" />
+      <workItem from="1745493987204" duration="15432000" />
     </task>
     <servers />
   </component>
