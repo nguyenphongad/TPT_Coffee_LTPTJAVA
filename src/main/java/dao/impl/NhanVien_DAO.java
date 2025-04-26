@@ -149,92 +149,47 @@ public class NhanVien_DAO extends UnicastRemoteObject implements INhanVien_Dao, 
 
 	// Search specific staff by fields
 	public ArrayList<NhanVien> timNhanVien(String maNV, String tenNV, Boolean gioiTinh, Date ngaySinh, String sDT, String email,
-									  String maCCCD, String diaChi, Date ngayVaoLam, Boolean trangThai, Integer chucVu) {
+										   String maCCCD, String diaChi, Date ngayVaoLam, Boolean trangThai, Integer chucVu) {
 		List<NhanVien> listNV = new ArrayList<>();
-
 		try {
 			em.getTransaction().begin();
 
-			String queryString = "SELECT nv FROM NhanVien nv WHERE 1 = 1";
-			if (maNV != null && !maNV.isBlank()) {
-				queryString += " AND nv.maNV LIKE :maNV";
+			// Xây dựng query động
+			StringBuilder queryString = new StringBuilder("SELECT nv FROM NhanVien nv WHERE 1=1");
+
+			if (maNV != null && !maNV.isEmpty()) {
+				queryString.append(" AND nv.maNV LIKE :maNV");
 			}
-			if (tenNV != null && !tenNV.isBlank()) {
-				queryString += " AND nv.tenNV LIKE :tenNV";
+			if (tenNV != null && !tenNV.isEmpty()) {
+				queryString.append(" AND nv.tenNV LIKE :tenNV");
 			}
-			if (gioiTinh != null) {
-				queryString += " AND nv.gioiTinh = :gioiTinh";
-			}
-			if (ngaySinh != null) {
-				queryString += " AND nv.ngaySinh = :ngaySinh";
-			}
-			if (sDT != null && !sDT.isBlank()) {
-				queryString += " AND nv.sDT LIKE :sDT";
-			}
-			if (email != null && !email.isBlank()) {
-				queryString += " AND nv.email LIKE :email";
-			}
-			if (maCCCD != null && !maCCCD.isBlank()) {
-				queryString += " AND nv.maCCCD LIKE :maCCCD";
-			}
-			if (diaChi != null && !diaChi.isBlank()) {
-				queryString += " AND nv.diaChi LIKE :diaChi";
-			}
-			if (ngayVaoLam != null) {
-				queryString += " AND nv.ngayVaoLam = :ngayVaoLam";
-			}
-			if (trangThai != null) {
-				queryString += " AND nv.trangThai = :trangThai";
-			}
-			if (chucVu != null) {
-				queryString += " AND nv.chucVu = :chucVu";
+			if (maCCCD != null && !maCCCD.isEmpty()) {
+				queryString.append(" AND nv.maCCCD LIKE :maCCCD");
 			}
 
-			TypedQuery<NhanVien> query = em.createQuery(queryString, NhanVien.class);
+			TypedQuery<NhanVien> query = em.createQuery(queryString.toString(), NhanVien.class);
 
-			if (maNV != null && !maNV.isBlank()) {
+			if (maNV != null && !maNV.isEmpty()) {
 				query.setParameter("maNV", "%" + maNV + "%");
 			}
-			if (tenNV != null && !tenNV.isBlank()) {
+			if (tenNV != null && !tenNV.isEmpty()) {
 				query.setParameter("tenNV", "%" + tenNV + "%");
 			}
-			if (gioiTinh != null) {
-				query.setParameter("gioiTinh", gioiTinh);
-			}
-			if (ngaySinh != null) {
-				query.setParameter("ngaySinh", ngaySinh);
-			}
-			if (sDT != null && !sDT.isBlank()) {
-				query.setParameter("sDT", "%" + sDT + "%");
-			}
-			if (email != null && !email.isBlank()) {
-				query.setParameter("email", "%" + email + "%");
-			}
-			if (maCCCD != null && !maCCCD.isBlank()) {
+			if (maCCCD != null && !maCCCD.isEmpty()) {
 				query.setParameter("maCCCD", "%" + maCCCD + "%");
-			}
-			if (diaChi != null && !diaChi.isBlank()) {
-				query.setParameter("diaChi", "%" + diaChi + "%");
-			}
-			if (ngayVaoLam != null) {
-				query.setParameter("ngayVaoLam", ngayVaoLam);
-			}
-			if (trangThai != null) {
-				query.setParameter("trangThai", trangThai);
-			}
-			if (chucVu != null) {
-				query.setParameter("chucVu", chucVu);
 			}
 
 			listNV = query.getResultList();
+			System.out.println(">>>>>>> " + listNV);
+
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			e.printStackTrace();
 		}
-
-		return new ArrayList<NhanVien>(listNV);
+		return new ArrayList<>(listNV);
 	}
+
 
 	public int laySoLuongNhanVien() {
 		int soLuong = 0;
